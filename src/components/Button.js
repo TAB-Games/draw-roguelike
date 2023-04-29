@@ -1,7 +1,7 @@
 import React from "react";
 
 function Button({ children, onClick, type, addClassNames }) {
-  let color = "purple";
+  let color = "sky";
   if (type === "error") color = "red";
   return (
     <button

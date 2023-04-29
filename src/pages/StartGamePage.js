@@ -15,7 +15,7 @@ function StartGamePage() {
       <input
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        placeholder="Your Name.."
+        placeholder="Enter Nickname"
         className="py-2 px-4 outline-none rounded shadow w-64 mb-6"
       />
       <Button onClick={startGameHandler}>Start Game</Button>
