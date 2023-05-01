@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { useState } from "react";
 import { addMessage } from "../store/slices/chat";
 import { v4 as uuid } from "uuid";
@@ -8,8 +8,8 @@ import Messages from "./Messages";
 
 function Chat() {
   //   const [user, setUser] = useState({});
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.gameState.username);
+  const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state.gameState.username);
   const [message, setMessage] = useState("");
 
   const postMessage = () => {

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../store/hooks";
 import { startGame } from "../store/slices/gameInit";
 import { addUser } from "../store/slices/users";
 import Button from "../components/Button";
 
 function StartGamePage() {
   const [username, setUsername] = useState("");
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const startGameHandler = () => {
     if (username.trim() !== "") {

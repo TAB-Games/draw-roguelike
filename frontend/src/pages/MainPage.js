@@ -5,12 +5,12 @@ import GamePage from "./GamePage";
 import FetchingPage from "./FetchingPage";
 import EndGamePage from "./EndGamePage";
 import * as stages from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../store/hooks";
 import { cancelGame } from "../store/slices/gameInit";
 
 const MainPage = () => {
   const currentStage = useSelector((state) => state.gameState.stage);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   let displayedPage;
 

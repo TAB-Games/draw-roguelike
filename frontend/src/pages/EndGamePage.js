@@ -1,12 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { restartGame } from "../store/slices/gameInit";
 import Button from "../components/Button";
 
 function EndGamePage() {
-  const dispatch = useDispatch();
-  const answers = useSelector((state) => state.quiz.answers);
-  const score = useSelector((state) => state.quiz.score);
+  const dispatch = useAppDispatch();
+  const answers = useAppSelector((state) => state.quiz.answers);
+  const score = useAppSelector((state) => state.quiz.score);
   const restartHandler = () => {
     dispatch(restartGame());
   };

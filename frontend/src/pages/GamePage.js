@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { answerQuestion } from "../store/slices/game";
 import { finishGame } from "../store/slices/gameInit";
 import Chat from "../components/Chat";
 import Button from "../components/Button";
 
 function GamePage() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [timeLeft, setTimeLeft] = useState(60);
 
-  const currentQuestion = useSelector(
+  const currentQuestion = useAppSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex].question
   );
-  const score = useSelector((state) => state.quiz.score);
-  const currentQuestionIndex = useSelector(
+  const score = useAppSelector((state) => state.quiz.score);
+  const currentQuestionIndex = useAppSelector(
     (state) => state.quiz.currentQuestionIndex
   );
 

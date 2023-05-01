@@ -1,10 +1,10 @@
 import React from "react";
 import { cancelGame } from "../store/slices/gameInit";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../store/hooks";
 import Button from "../components/Button";
 
 function FetchingPage() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   return (
     <div className="flex flex-col justify-center items-center mt-80">
       <div className="w-15 h-15 bg-green-700 rounded-full flex items-center justify-center mb-12 animate-bounce">
