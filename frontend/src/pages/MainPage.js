@@ -5,9 +5,12 @@ import GamePage from "./GamePage";
 import FetchingPage from "./FetchingPage";
 import EndGamePage from "./EndGamePage";
 import * as stages from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { cancelGame } from "../store/slices/gameInit";
 
 const MainPage = () => {
   const currentStage = useSelector((state) => state.gameState.stage);
+  const dispatch = useDispatch();
 
   let displayedPage;
 
@@ -29,7 +32,12 @@ const MainPage = () => {
   }
   return (
     <div className="font-mono bg-sky-50 min-h-screen">
-      <h1 className="bg-sky-500 text-white p-4 text-2xl text-center uppercase">
+      <h1
+        className="bg-sky-500 text-white p-4 text-2xl text-center uppercase"
+        onClick={() => {
+          dispatch(cancelGame());
+        }}
+      >
         Drawing Roguelike
       </h1>
       {displayedPage}

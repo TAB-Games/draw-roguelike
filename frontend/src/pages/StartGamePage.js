@@ -9,9 +9,11 @@ function StartGamePage() {
   const dispatch = useDispatch();
 
   const startGameHandler = () => {
-    // TODO: check for duplicate users
-    dispatch(addUser({ username }));
-    dispatch(startGame({ username }));
+    if (username.trim() !== "") {
+      // TODO: check for duplicate users
+      dispatch(addUser({ username }));
+      dispatch(startGame({ username }));
+    }
   };
   return (
     <div className="flex flex-col justify-center items-center mt-80">
