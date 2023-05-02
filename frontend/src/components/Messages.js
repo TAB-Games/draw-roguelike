@@ -14,7 +14,7 @@ function Messages({ userId }) {
   }, [chat]);
 
   return (
-    <div>
+    <div className="pb-44 pt-20 containerWrap">
       <h1>Messages</h1>
       <div>
         {chat.answers.map((message) => (
@@ -29,10 +29,24 @@ function Messages({ userId }) {
 const Message = ({ messageItem, userId }) => {
   return (
     <>
-      <div className="text-sky-900">{messageItem.userName}</div>
+      {/* <div className="text-sky-900">{messageItem.userName}</div>
       <div>
         <div className="font-bold">{messageItem.messages}</div>
-        {/* <div>{messageItem.time}</div> */}
+        <div>{messageItem.time}</div>
+      </div> */}
+
+      <div>
+        <div
+          className={`chat ${
+            messageItem.id === userId ? "chat-end" : "chat-start"
+          }`}
+        >
+          {/* <div className="chat-image avatar">
+            <div className="w-10 rounded-full"></div>
+          </div> */}
+          <div className="chat-header">{messageItem.userName}</div>
+          <div className="chat-bubble">{messageItem.messages}</div>
+        </div>
       </div>
     </>
   );
